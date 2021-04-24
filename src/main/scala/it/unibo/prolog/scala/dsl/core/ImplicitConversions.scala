@@ -7,5 +7,5 @@ trait ImplicitConversions {
   implicit def prologConverter[E: PrologConverter](rep: E): Term = implicitly[PrologConverter[E]].toTerm(rep)
 
   implicit def iterableConverters[E: PrologConverter](rep: Iterable[E]): Term =
-    PList.of(rep.map(prologConverter).toSeq: _*)
+    PList.of(rep.map(prologConverter[E]).toSeq: _*)
 }

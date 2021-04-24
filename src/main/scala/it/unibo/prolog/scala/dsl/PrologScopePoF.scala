@@ -6,9 +6,9 @@ import it.unibo.tuprolog.core.Struct
 import it.unibo.tuprolog.core.Term
 import it.unibo.tuprolog.core.Var
 
-class PrologScope {}
+class PrologScopePoF {}
 
-object PrologScope {
+object PrologScopePoF {
   //implicit def stringToAtom(string: String): Atom = Atom.of(string)
   implicit def intToInteger(int: Int): Integer = Integer.of(int)
 
