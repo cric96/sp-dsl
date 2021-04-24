@@ -1,6 +1,6 @@
 package it.unibo.prolog.scala.dsl.core
 
-//utility to collect the standard converters
+//utility to collect standard converters
 trait PrologConverters extends NumericConverters with ImplicitConversions {}
 
 object PrologConverters {
