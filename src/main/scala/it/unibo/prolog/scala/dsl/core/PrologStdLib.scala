@@ -10,5 +10,4 @@ trait PrologStdLib {
     def ?==(right: Term): Struct = Struct.of("==", converter(me), right)
     def ?=(right: Term): Struct  = Struct.of("=", converter(me), right)
   }
-
 }
