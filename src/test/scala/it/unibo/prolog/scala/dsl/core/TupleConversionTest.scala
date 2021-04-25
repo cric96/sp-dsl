@@ -8,7 +8,7 @@ class TupleConversionTest {
 
   @Test
   def scalaTuple3Conversion(): Unit = {
-    import TupleConversionTest.myConversion$._
+    import TupleConversionTest.myConversion._
     val tuple: Tuple = (1, 2, 3)
     val prologTuple  = Tuple.of(Integer.of(1), Integer.of(2), Integer.of(3))
     assert(tuple == prologTuple)
@@ -16,5 +16,5 @@ class TupleConversionTest {
 }
 
 object TupleConversionTest {
-  object myConversion$ extends ImplicitConversions with NumericConverters with TupleConversion
+  object myConversion extends PrologImplicitConversion with NumericConverters with TupleConversion
 }

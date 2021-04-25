@@ -4,7 +4,7 @@ import it.unibo.tuprolog.core.Term
 import it.unibo.tuprolog.core.Tuple
 
 trait TupleConversion {
-  self: ImplicitConversions =>
+  self: PrologImplicitConversion =>
 
   implicit def convert1[A1: C](tuple: Tuple1[A1]): Term              = tuple._1
   implicit def convert2[A1: C, A2: C](t: (A1, A2)): Tuple            = Tuple.of(t._1, t._2)

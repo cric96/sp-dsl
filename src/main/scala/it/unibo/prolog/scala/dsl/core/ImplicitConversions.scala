@@ -1,8 +1,10 @@
 package it.unibo.prolog.scala.dsl.core
 
-import it.unibo.tuprolog.core.Term
-
-trait ImplicitConversions {
-  type C[A] = PrologConverter[A] //shorthand
-  implicit def prologConverter[E: C](rep: E): Term = implicitly[C[E]].toTerm(rep)
-}
+/**
+ * declare the standard conversions excepted in a "vanilla" prolog dsl
+ */
+trait ImplicitConversions
+    extends NumericConverters     //type classes
+    with PrologImplicitConversion //conversions
+    with TupleConversion
+    with SequenceConversions {}
