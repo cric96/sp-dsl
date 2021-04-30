@@ -8,7 +8,7 @@ object NewMain extends App {
   //1. import "all" from dsl package
   { //used to enclose the implicit conversions
     import it.unibo.prolog.scala.dsl.Implicits.all._
-    val work: Term = 1
+    val work: Term = (1, 2, 3, 4, 2.0)
     println(work)
   }
 

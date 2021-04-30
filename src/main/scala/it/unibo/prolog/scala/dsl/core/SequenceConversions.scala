@@ -6,6 +6,6 @@ import it.unibo.tuprolog.core.{List => PList}
 trait SequenceConversions {
   self: PrologImplicitConversion =>
 
-  implicit def iterableConverters[E: C](rep: Iterable[E]): Term =
-    PList.of(rep.map(prologConverter[E]).toSeq: _*)
+  implicit def iterableConverters[E](rep: Iterable[E])(implicit e: E => Term): Term =
+    PList.of(rep.map(e(_)).toSeq: _*)
 }
